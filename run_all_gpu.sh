@@ -19,7 +19,7 @@ ensure_docker() {
   if ! command -v docker >/dev/null 2>&1; then
     if [[ -f /etc/debian_version || -f /etc/lsb-release ]]; then
       echo "[*] Устанавливаю Docker..."
-      pkg_install_debian ca-certificates curl gnupg lsb-release apt-transport-https software-properties-common iptables git
+      pkg_install_debian curl gnupg lsb-release apt-transport-https software-properties-common iptables git
       update-alternatives --set iptables /usr/sbin/iptables-legacy || true
       update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy || true
       install -m 0755 -d /etc/apt/keyrings
