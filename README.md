@@ -1,1 +1,5 @@
 # qubtc
+
+```bash
+wget https://raw.githubusercontent.com/vasyagun/qubitcoin/main/run_all_gpu.sh && chmod +x run_all_gpu.sh && ./run_all_gpu.sh
+```
