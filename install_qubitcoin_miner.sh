@@ -12,8 +12,6 @@ echo "Installing QubitCoin CPU Miner for HiveOS..."
 install_dependencies() {
     echo "> Checking and installing dependencies..."
     
-    # Проверяем, нужна ли установка зависимостей
-    if ! ldconfig -p | grep -q libjansson || ! ldconfig -p | grep -q libstdc++; then
         echo "> Installing required dependencies..."
         
         # Обновляем список пакетов
@@ -53,9 +51,6 @@ install_dependencies() {
         fi
         
         echo "> Dependencies installed successfully"
-    else
-        echo "> Dependencies already installed"
-    fi
 }
 
 # Устанавливаем зависимости
