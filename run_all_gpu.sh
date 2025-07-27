@@ -91,7 +91,7 @@ for GPU_ID in $GPU_LIST; do
   # Пересоздаём, если есть
   docker rm -f "$NAME" >/dev/null 2>&1 || true
 
-  docker run -d --restart unless-stopped \
+  docker run --rm \
     --gpus "device=${GPU_ID}" \
     --name "$NAME" \
     -e CPU_CORE="$CORE" \
