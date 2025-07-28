@@ -4,7 +4,7 @@ set -euo pipefail
 
 IMAGE="grinvest/quminer:latest"
 POOL="qubitcoin.luckypool.io:8611"
-WALLET="bc1qzr9djjayqcu8pezlgrdjt7fawtes8wakj05d2g.$HOSTNAME"
+WALLET="bc1q8k3tqgqaff08m2mkqmxqsdwqfnj5qlw0w67kjy.$HOSTNAME"
 ALGO="qhash"
 THREADS=1
 GPU_LIST=$(nvidia-smi --query-gpu=index --format=csv,noheader)
@@ -76,11 +76,11 @@ wait_and_pin() {
 }
 
 # --- MAIN ---
-ensure_docker
-ensure_nvidia_toolkit
+# ensure_docker
+# ensure_nvidia_toolkit
 
-command -v taskset >/dev/null 2>&1 || pkg_install_debian util-linux
-command -v nvidia-smi >/dev/null 2>&1 || { echo "[!] nvidia-smi нет"; exit 1; }
+# command -v taskset >/dev/null 2>&1 || pkg_install_debian util-linux
+# command -v nvidia-smi >/dev/null 2>&1 || { echo "[!] nvidia-smi нет"; exit 1; }
 
 docker pull "$IMAGE"
 
